@@ -1,5 +1,9 @@
-<h1 align="center"><b> 🎵 UVR5 UI 🎵 </b></h1>
+<h1 align="center"><b> 🎵 UVR5 UI Dockerized 🎵 </b></h1>
 <div align="center">
+
+### This is a dockerized of UVR5 UI
+Original Readme below:
+
 
 [![madewithlove](https://img.shields.io/badge/made_with-%E2%9D%A4-red?style=for-the-badge&labelColor=orange)](https://github.com/Eddycrack864/UVR5-UI)
 
