@@ -6,6 +6,7 @@ services:
     volumes:
       - ./models:/opt/uvr-webui/models
       - ./outputs:/opt/uvr-webui/outputs
+      - ./inputs:/opt/uvr-webui/inputs
     entrypoint: ["python", "app.py", "--listen-port", "7860"]
     restart: unless-stopped
     tty: true
