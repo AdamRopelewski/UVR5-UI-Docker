@@ -8,7 +8,7 @@ services:
       - ./models:/opt/uvr-webui/models
       - ./outputs:/opt/uvr-webui/outputs
       - ./inputs:/opt/uvr-webui/inputs
-    stop_signal: SIGNKILL
+    stop_signal: SIGKILL
     restart: unless-stopped
     tty: true
     stdin_open: true
