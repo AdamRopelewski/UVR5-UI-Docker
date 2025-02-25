@@ -1,8 +1,6 @@
-FROM continuumio/miniconda3:25.1.1-2
-
+FROM python:3.10.12-slim
 
 WORKDIR /opt/uvr-webui
-
 
 COPY . .
 
@@ -12,10 +10,9 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+RUN python -m pip install --upgrade pip==24.1.2 \
+    && python -m pip install -r requirements.txt
 
-RUN conda create --prefix ./env python=3.10.12 -y && \
-    ./env/bin/python -m pip install "pip==24.1.2" && \
-    ./env/bin/python -m pip install -r requirements.txt
 
 
 ENV PATH="/opt/uvr-webui/env/bin:$PATH"
