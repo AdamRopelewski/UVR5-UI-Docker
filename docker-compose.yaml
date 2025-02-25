@@ -1,13 +1,13 @@
 services:
   uvr-webui:
     build: .
+    entrypoint: ["python", "app.py", "--server_port", "7860", "--server_name", "0.0.0.0", "--username", "user", "--password", "password"]
     ports:
-      - "7862:7860"  # Mapowanie portu hosta (7862) na port kontenera (7860)
+      - "7862:7860" 
     volumes:
       - ./models:/opt/uvr-webui/models
       - ./outputs:/opt/uvr-webui/outputs
       - ./inputs:/opt/uvr-webui/inputs
-    entrypoint: ["python", "app.py", "--listen-port", "7860"]
     restart: unless-stopped
     tty: true
     stdin_open: true
