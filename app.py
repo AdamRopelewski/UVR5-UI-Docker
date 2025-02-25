@@ -42,10 +42,25 @@ if __name__ == "__main__":
        help="Enable sharing of the interface through Gradio's temporary URLs"
     )
     parser.add_argument(
-       "--listen-port",
+       "--server_port",
        type=int,
        default=7860,
-       help="The listening port that the server will use (default: 9999)"
+       help="The listening port that the server will use (default: 7860)"
+    )
+    parser.add_argument(
+        "--server_name",
+        type=str,
+        help="Enable the server name to be displayed in the interface"
+    )
+    parser.add_argument(
+        "--username",
+        type=str,
+        help="Username for authentication"
+    )
+    parser.add_argument(
+        "--password",
+        type=str,
+        help="Password for authentication"
     )
     parser.add_argument(
        "--open",
@@ -1537,11 +1552,14 @@ with gr.Blocks(theme = loadThemes.load_json() or "NoCrypt/miku", title = "🎵 U
                 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/uvr5)
                 """
             )
-
+auth_credentials = None
+if args.username and args.password:
+    auth_credentials = [(args.username, args.password)] 
 app.launch(
     share=args.share,
     favicon_path="assets/favicon.ico",
-    server_name="0.0.0.0",
-    server_port=args.listen_port,
-    inbrowser=args.open
+    server_name=args.server_name,
+    server_port=args.server_port,
+    inbrowser=args.open,
+    auth=auth_credentials  
 )
