@@ -34,7 +34,7 @@ else:
 if __name__ == "__main__":
     parser = ArgumentParser(
        description="Separate audio into multiple stems",
-       epilog="Example: python app.py --share --listen-port 8080 --open"
+       epilog="Example: python app.py --share --server_port 8080 --open"
     )
     parser.add_argument(
        "--share",
@@ -1538,6 +1538,7 @@ with gr.Blocks(theme = loadThemes.load_json() or "NoCrypt/miku", title = "🎵 U
                 """
                 UVR5 UI created by **[Eddycrack 864](https://github.com/Eddycrack864).** Join **[AI HUB](https://discord.gg/aihub)** community.
                 * python-audio-separator by [beveradb](https://github.com/beveradb).
+                * Dockerized Version by **[thedavesky](https://github.com/thedavesky)** x **[AdamRopelewski](https://github.com/AdamRopelewski)**.
                 * Special thanks to [Ilaria](https://github.com/TheStingerX) for hosting this space and help.
                 * Thanks to [Mikus](https://github.com/cappuch) for the help with the code.
                 * Thanks to [Nick088](https://huggingface.co/Nick088) for the help to fix roformers.
