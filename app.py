@@ -223,7 +223,6 @@ out_dir = "./outputs"
 models_dir = "./models"
 extensions = (".wav", ".flac", ".mp3", ".ogg", ".opus", ".m4a", ".aiff", ".ac3")
 
-initialize_presence()
 
 def download_audio(url, output_dir="ytdl"):
 
