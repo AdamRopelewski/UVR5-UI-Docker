@@ -728,8 +728,8 @@ def demucs_batch(path_input, path_output, model, out_format, shifts, segment_siz
             except Exception as e:
                 raise RuntimeError(f"Roformer batch separation failed: {e}") from e
             
-with gr.Blocks(theme = loadThemes.load_json() or "NoCrypt/miku", title = "🎵 UVR5 UI 🎵") as app:
-    gr.Markdown("<h1> 🎵 UVR5 UI Dockerized🎵 </h1>")
+with gr.Blocks(theme = loadThemes.load_json() or "NoCrypt/miku", title = "🎵 UVR5 UI Dockerized 🎵") as app:
+    gr.Markdown("<h1> 🎵 UVR5 UI Dockerized 🎵 </h1>")
     gr.Markdown(i18n("If you like UVR5 UI you can star my repo on [GitHub](https://github.com/AdamRopelewski/UVR5-UI-Docker)"))
     with gr.Tabs():
         with gr.TabItem("BS/Mel Roformer"):
