@@ -44,7 +44,7 @@ if __name__ == "__main__":
     parser.add_argument(
        "--listen-port",
        type=int,
-       default=9999,
+       default=7860,
        help="The listening port that the server will use (default: 9999)"
     )
     parser.add_argument(
@@ -1541,7 +1541,7 @@ with gr.Blocks(theme = loadThemes.load_json() or "NoCrypt/miku", title = "🎵 U
 app.launch(
     share=args.share,
     favicon_path="assets/favicon.ico",
-    server_name="",
+    server_name="0.0.0.0",
     server_port=args.listen_port,
     inbrowser=args.open
 )
