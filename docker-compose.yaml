@@ -1,17 +1,16 @@
 services:
-  uvr-webui:
+  app:
     build: .
-    entrypoint: ["python", "app.py", "--server_port", "7860", "--server_name", "0.0.0.0", "--username", "user", "--password", "password"]
+    entrypoint: ["python", "app.py", "--server_port", "7860", "--server_name", "0.0.0.0"]
     ports:
-      - "7862:7860" 
+      - "7860:7860"
     volumes:
-      - ./models:/opt/uvr-webui/models
-      - ./outputs:/opt/uvr-webui/outputs
-      - ./inputs:/opt/uvr-webui/inputs
+      - ./models:/UVR5-UI-Docker/models
+      - ./inputs:/UVR5-UI-Docker/inputs
+      - ./outputs:/UVR5-UI-Docker/outputs
+    tty: true
     stop_signal: SIGKILL
     restart: unless-stopped
-    tty: true
-    stdin_open: true
     deploy:
       resources:
         reservations:
